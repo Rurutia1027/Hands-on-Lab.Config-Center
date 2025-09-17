@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-cloud-config-app
+datasource:
+  url: jdbc:mysql://localhost:3306/spring-cloud-config-app
+  username: root
+  password: root
+custom:
+  featureToggle:
+    enableAwesomeFeature: true
