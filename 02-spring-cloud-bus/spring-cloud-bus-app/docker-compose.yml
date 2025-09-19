@@ -1,0 +1,45 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - springbus
+
+  # our implemented config server
+  config-server:
+    image: nanachi1027/spring-cloud-config-server:1.0-SNAPSHOT
+    container_name: config-server
+    ports:
+      - "8888:8888"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+    depends_on:
+      - rabbitmq
+    networks:
+      - springbus
+#
+#  app1:
+#    image: spring-bus-demo:latest
+#    environment:
+#      - SPRING_APPLICATION_NAME=app1
+#      - SERVER_PORT=8081
+#    ports:
+#      - "8081:8081"
+#    depends_on:
+#      - rabbitmq
+#
+#  app2:
+#    image: spring-bus-demo:latest
+#    environment:
+#      - SPRING_APPLICATION_NAME=app2
+#      - SERVER_PORT=8082
+#    ports:
+#      - "8082:8082"
+#    depends_on:
+#      - rabbitmq
+
+networks:
+  springbus:
+    driver: bridge

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: spring-cloud-bus-app
+  profiles:
+    active: dev
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+
+  # RabbitMQ spring stater configuration
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+# Actuator enable endpoint expose
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, env, refresh, bus-refresh
