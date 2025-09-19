@@ -60,6 +60,6 @@ Hands on codes will guide you through:
 > Multi-environment KV management. 
 > Health check integration. 
 > Reactive updates and event handling. 
-> Optional Spring Cloud Bus integration for cross-instance event braodcasting. 
+> Optional Spring Cloud Bus integration for cross-instance event broadcasting. 
 
 
