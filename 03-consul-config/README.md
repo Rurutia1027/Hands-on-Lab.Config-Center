@@ -2,6 +2,8 @@
 ## Overview 
 This folder provides a hands-on lab for **Spring Cloud Consul**, a cloud-native solution for **dynamic configuration** and **service discovery**. It is designed for developers who want to understand how to scale microservices in a dynamic environment while maintaining configuration consistency and operational visibility. 
 
+**Go new repository [Hands-on-Lab.FluxCD-Consul-SpringBoot](https://github.com/Rurutia1027/Hands-on-Lab.FluxCD-Consul-SpringBoot)**
+
 ## What is Consul?
 **Consul** is a distributed, highly available tool for:
 - **Service Discovery**: Automatically register services and discover other services without hardcoding endpoints. 
@@ -10,12 +12,12 @@ This folder provides a hands-on lab for **Spring Cloud Consul**, a cloud-native 
 - **Multi-Datacenter Support**: Works across regions and cloud environments. 
 - **Event Broadcasting**: React to configuration changes across multiple instances. 
 
-Consul can be integrated with Spring Cloud via **Spring Cloud Consul Starter**, enabling seamless service registration, discovery, and dyanmic configuraiton updates using `/actuator/refresh` and event listeners. 
+Consul can be integrated with Spring Cloud via **Spring Cloud Consul Starter**, enabling seamless service registration, discovery, and dynamic configuration updates using `/actuator/refresh` and event listeners. 
 
 ## Why Use Consul?
-While **Spring Cloud Config** + **Bus** provides dynamic configuration and event propagatin, it has some limitations as applications scale: 
+While **Spring Cloud Config** + **Bus** provides dynamic configuration and event propagation, it has some limitations as applications scale: 
 - **Centralized Config Only**: Git-backed config works well for source-controlled static configs, but lacks real-time discovery. 
-- **Limited Service Discovery**: Config server along doesn't handle service registration or dynamic endpoint resolution.
+- **Limited Service Discovery**: Config server alone doesn't handle service registration or dynamic endpoint resolution.
 - **Complex Multi-Environment Scenarios**: Managing profiles, incremental updates, and cross-environment overrides becomes cumbersome at scale. 
 - **Cloud-Native Limitations**: Deploying multiple instances in a cloud environment requires external tools to achieve dynamic discovery and health checks. 
 
@@ -33,7 +35,7 @@ Consul shines in scenarios such as:
 
 ### Large-Scale Microservice Deployments 
 - Hundreds of microservices need discovery and configuration management. 
-- Automatic registration and health monitoring prevents stale or unreachable endpoints. 
+- Automatic registration and health monitoring prevent stale or unreachable endpoints. 
 
 ### Dynamic Runtime Configuration 
 - Updating config without redploying services. 
@@ -48,12 +50,12 @@ Consul shines in scenarios such as:
 - Integrates with Spring Cloud Bus or other messaging layers if needed. 
 
 ## Hands-On Lab: Spring Cloud Consul 
-Hands on codes will guide you through: 
+Hands-on codes will guide you through: 
 - Bootstrap a Consul server locally using Docker.
 - Creating Spring Boot applications integrated with Consul for:
-> Dynamically configuration via KV store. 
+> Dynamically configure via the KV store. 
 > Service registration and discovery. 
-> `/actuator/refresh` to pull latest config. 
+> `/actuator/refresh` to pull the latest config. 
 > Event listener logging to monitor changes. 
 - Simulating multiple instances and observing dynamic config updates. 
 - Exploring advanced topics:
